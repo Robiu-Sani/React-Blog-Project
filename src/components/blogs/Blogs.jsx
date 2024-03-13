@@ -15,7 +15,7 @@ export default function Blogs(props) {
 
     return (
         <div className="col-span-1 sm:col-span-2 w-full">
-            {blogs.map(blog => <Bloge key={blog.id} blog={blog} handleBookmark={props.handleBookmark}></Bloge>)}
+            {blogs.map(blog => <Bloge key={blog.id} blog={blog} handleBookmark={props.handleBookmark} handleReadingTime={props.handleReadingTime}></Bloge>)}
         </div>
     );
 }

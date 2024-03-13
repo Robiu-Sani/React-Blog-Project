@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function Bloge(props) {
     const [descriptionShow, setDescriptionShow] = useState(false); // Changed initial state to a boolean
 
-    const {handleBookmark , blog} = props
+    const {handleBookmark , handleReadingTime, blog} = props
     const { id, title, cover, author, author_img, posted_date, reading_time, hashtags, description } = props.blog;
 
     function handleDescription() {
@@ -28,8 +28,9 @@ export default function Bloge(props) {
             <div className="m-4 flex flex-wrap gap-3">
                 {hashtags.map((hash, index) => <p key={index}>#{hash}</p>)} {/* Added key prop */}
             </div>
-            <button onClick={handleDescription}>Click To Read The Blog</button>
+            <button onClick={handleDescription}>Click To Read The Blog <small className='text-[10px] bg-green-600 p-[2px] rounded-full'>{id}</small></button>
             {descriptionShow && <p className="m-4">{description}</p>}
+            <br /><button className='text-blue-600 text-[14px] m-5' onClick={() => handleReadingTime(id, reading_time)}><i className="fa-solid fa-check fa-fw"></i> mark as read </button>
         </div>
     );
 }
