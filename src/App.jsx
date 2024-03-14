@@ -24,7 +24,7 @@ export default function App() {
   return (
     <div>
       <Header></Header>
-      <div className="container p-2 grid grid-cols-1 gap-3 sm:grid-cols-3">
+      <div className="container p-2 grid grid-cols-1 gap-3 mx-auto sm:grid-cols-3">
         <Blogs handleBookmark={handleBookmark} handleReadingTime={handleReadingTime}></Blogs>
         <AddCard bookmarks={bookmarks} readingTime={readingTime}></AddCard>
       </div>
